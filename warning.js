@@ -89,9 +89,11 @@
   _lit3.setAttribute('id','_lit3');
   _lit4.setAttribute('id','_lit4');
   _lit5.setAttribute('id','_lit5');
+  _d.style.zIndex = 99999;
   var _width = document.documentElement.clientWidth;
   var _height = document.documentElement.clientHeight;
   var _dl = document.getElementById('_l');
+  _dl.style.zIndex = 99998;
   _dl.style.width =  _width+"px";
   _dl.style.height = _height+"px";
   _dl.style.position = "absolute";
