@@ -1,4 +1,5 @@
 (function(window, undefined) {
+
   var fn = function(cb) {
     var configObj = {};
     if(typeof(cb) == 'function') {
@@ -23,6 +24,40 @@
     var url3      = LOC('url3');
     var url4      = LOC('url4');
     var url5      = LOC('url5');
+
+    var imagesStyle = {
+      background: {
+          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -185px -93px',
+          width: '120px',
+          height: '122px'
+      },
+      ie: { 
+          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll 8px -86px',
+          width: '100px',
+          height: '110px'
+      },
+      firefox: { 
+          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -84px -86px',
+          width: '100px',
+          height: '110px'
+      },
+      safari: { 
+          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -84px 7px',
+          width: '100px',
+          height: '110px'
+      },
+      opera: { 
+          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll 8px 7px',
+          width: '100px',
+          height: '110px'
+      },
+      chrome: { 
+          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -174px 7px',
+          width: '100px',
+          height: '110px'
+      }
+    }
+
 
   // oldschool from gcode
   var _body = document.getElementsByTagName('body')[0];
@@ -147,7 +182,9 @@
   var _li3ds = _li3d.style;
   var _li4ds = _li4d.style;
   var _li5ds = _li5d.style;
-  _li1ds.background = _li2ds.background = _li3ds.background = _li4ds.background = _li5ds.background = "transparent url('"+imgPath+"background_browser.png') no-repeat scroll left top";
+  _li1ds.background = _li2ds.background = _li3ds.background = _li4ds.background = _li5ds.background = imagesStyle.background.bg;
+  _li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = imagesStyle.background.width;
+  _li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = imagesStyle.background.height;
   _li1ds.cursor = _li2ds.cursor = _li3ds.cursor = _li4ds.cursor = _li5ds.cursor = "pointer";
   _li1d.onclick = function() {window.location = url1; };
    _li2d.onclick = function() {window.location = url2; };
@@ -155,8 +192,8 @@
    _li4d.onclick = function() {window.location = url4; };
    _li5d.onclick = function() {window.location = url5; };
    _li1ds.styleFloat = _li2ds.styleFloat = _li3ds.styleFloat = _li4ds.styleFloat = _li5ds.styleFloat = "left";
-  _li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = "120px";
-  _li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = "122px";
+  //_li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = "120px";
+  //_li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = "122px";
   _li1ds.margin = _li2ds.margin = _li3ds.margin = _li4ds.margin = _li5ds.margin = "0 10px 10px 0";
   var _ico1d = document.getElementById('_ico1');
   var _ico2d = document.getElementById('_ico2');
@@ -171,11 +208,11 @@
   _ico1ds.width = _ico2ds.width = _ico3ds.width = _ico4ds.width = _ico5ds.width = "100px";
   _ico1ds.height = _ico2ds.height = _ico3ds.height = _ico4ds.height = _ico5ds.height = "100px";
   _ico1ds.margin = _ico2ds.margin = _ico3ds.margin = _ico4ds.margin = _ico5ds.margin = "1px auto";
-  _ico1ds.background = "transparent url('"+imgPath+"browser_ie.png') no-repeat scroll left top";
-  _ico2ds.background = "transparent url('"+imgPath+"browser_firefox.png') no-repeat scroll left top";
-  _ico3ds.background = "transparent url('"+imgPath+"browser_safari.png') no-repeat scroll left top";
-  _ico4ds.background = "transparent url('"+imgPath+"browser_opera.png') no-repeat scroll left top";
-  _ico5ds.background = "transparent url('"+imgPath+"browser_chrome.png') no-repeat scroll left top";
+  _ico1ds.background = imagesStyle.ie.bg;
+  _ico2ds.background = imagesStyle.firefox.bg;
+  _ico3ds.background = imagesStyle.safari.bg;
+  _ico4ds.background = imagesStyle.opera.bg 
+  _ico5ds.background = imagesStyle.chrome.bg;
   _lit1.appendChild(document.createTextNode(br1));
   _lit2.appendChild(document.createTextNode(br2));
   _lit3.appendChild(document.createTextNode(br3));
@@ -205,6 +242,5 @@
   if(window.ie6Warning === undefined || !ie6Warning) {
     window.ie6Warning = fn;
   }
-  
   
 })(window);
