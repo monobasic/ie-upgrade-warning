@@ -6,58 +6,42 @@
       configObj = cb();
     }
     //accessor method
-    var LOC = function(key) {
+    var l10n = function(key) {
       return configObj['localizations'][key];
     };
 
-    var imgPath   = configObj['imgPath'];
-    var msg1      = LOC('msg1');
-    var msg2      = LOC('msg2');
-    var msg3      = LOC('msg3');
-    var br1       = LOC('br1');
-    var br2       = LOC('br2');;
-    var br3       = LOC('br3');
-    var br4       = LOC('br4');
-    var br5       = LOC('br5');
-    var url1      = LOC('url1');
-    var url2      = LOC('url2');
-    var url3      = LOC('url3');
-    var url4      = LOC('url4');
-    var url5      = LOC('url5');
-
     var imagesStyle = {
       background: {
-          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -185px -93px',
+          bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -185px -93px',
           width: '120px',
           height: '122px'
       },
       ie: { 
-          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll 8px -86px',
+          bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll 8px -86px',
           width: '100px',
           height: '110px'
       },
       firefox: { 
-          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -84px -86px',
+          bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -84px -86px',
           width: '100px',
           height: '110px'
       },
       safari: { 
-          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -84px 7px',
+          bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -84px 7px',
           width: '100px',
           height: '110px'
       },
       opera: { 
-          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll 8px 7px',
+          bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll 8px 7px',
           width: '100px',
           height: '110px'
       },
       chrome: { 
-          bg: 'transparent url('+imgPath+'/images.jpg) no-repeat scroll -174px 7px',
+          bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -174px 7px',
           width: '100px',
           height: '110px'
       }
     }
-
 
   // oldschool from gcode
   var _body = document.getElementsByTagName('body')[0];
@@ -151,7 +135,7 @@
   _dd.style.listStyleType = "none";
   _dd.style.color = "#4F4F4F";
   _dd.style.fontSize = "12px";
-  _h.appendChild(document.createTextNode(msg1));
+  _h.appendChild(document.createTextNode(l10n.msg1));
   var _hd = document.getElementById('_h');
   _hd.style.display = "block";
   _hd.style.fontSize = "1.3em";
@@ -159,10 +143,10 @@
   _hd.style.color = "#333";
   _hd.style.fontFamily = "Helvetica,Arial,sans-serif";
   _hd.style.fontWeight = "bold";
-  _p1.appendChild(document.createTextNode(msg2));
+  _p1.appendChild(document.createTextNode(l10n.msg2));
   var _p1d = document.getElementById('_p1');
   _p1d.style.marginBottom = "1em";
-  _p2.appendChild(document.createTextNode(msg3));
+  _p2.appendChild(document.createTextNode(l10n.msg3));
   var _p2d = document.getElementById('_p2');
   _p2d.style.marginBottom = "1em";
   var _uld = document.getElementById('_ul');
@@ -186,11 +170,11 @@
   _li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = imagesStyle.background.width;
   _li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = imagesStyle.background.height;
   _li1ds.cursor = _li2ds.cursor = _li3ds.cursor = _li4ds.cursor = _li5ds.cursor = "pointer";
-  _li1d.onclick = function() {window.location = url1; };
-   _li2d.onclick = function() {window.location = url2; };
-   _li3d.onclick = function() {window.location = url3; };
-   _li4d.onclick = function() {window.location = url4; };
-   _li5d.onclick = function() {window.location = url5; };
+  _li1d.onclick = function() {window.location = l10n.url1; };
+   _li2d.onclick = function() {window.location = l10n.url2; };
+   _li3d.onclick = function() {window.location = l10n.url3; };
+   _li4d.onclick = function() {window.location = l10n.url4; };
+   _li5d.onclick = function() {window.location = l10n.url5; };
    _li1ds.styleFloat = _li2ds.styleFloat = _li3ds.styleFloat = _li4ds.styleFloat = _li5ds.styleFloat = "left";
   //_li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = "120px";
   //_li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = "122px";
@@ -213,11 +197,11 @@
   _ico3ds.background = imagesStyle.safari.bg;
   _ico4ds.background = imagesStyle.opera.bg 
   _ico5ds.background = imagesStyle.chrome.bg;
-  _lit1.appendChild(document.createTextNode(br1));
-  _lit2.appendChild(document.createTextNode(br2));
-  _lit3.appendChild(document.createTextNode(br3));
-  _lit4.appendChild(document.createTextNode(br4));
-  _lit5.appendChild(document.createTextNode(br5));
+  _lit1.appendChild(document.createTextNode(l10n.br1));
+  _lit2.appendChild(document.createTextNode(l10n.br2));
+  _lit3.appendChild(document.createTextNode(l10n.br3));
+  _lit4.appendChild(document.createTextNode(l10n.br4));
+  _lit5.appendChild(document.createTextNode(l10n.br5));
   var _lit1d = document.getElementById('_lit1');
   var _lit2d = document.getElementById('_lit2');
   var _lit3d = document.getElementById('_lit3');
