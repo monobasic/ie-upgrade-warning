@@ -67,6 +67,9 @@
 
         document.body.appendChild(_html.l);
         document.body.appendChild(_html.d);
+        //left these attributes so someone can target the rest of the message with custom CSS
+        _html.l.setAttribute('id','lightsOut');
+        _html.d.setAttribute('id','ie6Warning');
 
         _html.d.appendChild(_html.h);
         _html.d.appendChild(_html.p1);
@@ -87,27 +90,6 @@
         _html.li3.appendChild(_html.lit3);
         _html.li4.appendChild(_html.lit4);
         _html.li5.appendChild(_html.lit5);
-        _html.d.setAttribute('id','_d');
-        _html.l.setAttribute('id','_l');
-        _html.h.setAttribute('id','_h');
-        _html.p1.setAttribute('id','_p1');
-        _html.p2.setAttribute('id','_p2');
-        _html.ul.setAttribute('id','_ul');
-        _html.li1.setAttribute('id','_li1');
-        _html.li2.setAttribute('id','_li2');
-        _html.li3.setAttribute('id','_li3');
-        _html.li4.setAttribute('id','_li4');
-        _html.li5.setAttribute('id','_li5');
-        _html.ico1.setAttribute('id','_ico1');
-        _html.ico2.setAttribute('id','_ico2');
-        _html.ico3.setAttribute('id','_ico3');
-        _html.ico4.setAttribute('id','_ico4');
-        _html.ico5.setAttribute('id','_ico5');
-        _html.lit1.setAttribute('id','_lit1');
-        _html.lit2.setAttribute('id','_lit2');
-        _html.lit3.setAttribute('id','_lit3');
-        _html.lit4.setAttribute('id','_lit4');
-        _html.lit5.setAttribute('id','_lit5');
         _html.d.style.zIndex = 99999;
 
         var _width = document.documentElement.clientWidth;
@@ -172,8 +154,6 @@
         _html.li4.onclick = function() {window.location = l10n.url4; };
         _html.li5.onclick = function() {window.location = l10n.url5; };
         _li1ds.styleFloat = _li2ds.styleFloat = _li3ds.styleFloat = _li4ds.styleFloat = _li5ds.styleFloat = "left";
-        //_li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = "120px";
-        //_li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = "122px";
         _li1ds.margin = _li2ds.margin = _li3ds.margin = _li4ds.margin = _li5ds.margin = "0 10px 10px 0";
 
         var _ico1ds = _html.ico1.style;
