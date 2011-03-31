@@ -5,10 +5,8 @@
         if(typeof(cb) == 'function') {
             configObj = cb();
         }
-        //accessor method
-        var l10n = function(key) {
-            return configObj['localizations'][key];
-        };
+
+        var l10n = configObj['localizations'];
 
         var imagesStyle = {
             background: {
