@@ -6,7 +6,7 @@
             configObj = cb();
         }
 
-        var l10n = configObj.localizations.;
+        var l10n = configObj.localizations;
 
         var imagesStyle = {
             background: {
@@ -39,7 +39,7 @@
                 width: '100px',
                 height: '110px'
             }
-        }
+        };
 
         var _html = {
             d: document.createElement('div'),
@@ -63,7 +63,7 @@
             lit3: document.createElement('div'),
             lit4: document.createElement('div'),
             lit5: document.createElement('div')
-        }
+        };
 
         document.body.appendChild(_html.l);
         document.body.appendChild(_html.d);
@@ -167,7 +167,7 @@
         _ico1ds.background = imagesStyle.ie.bg;
         _ico2ds.background = imagesStyle.firefox.bg;
         _ico3ds.background = imagesStyle.safari.bg;
-        _ico4ds.background = imagesStyle.opera.bg 
+        _ico4ds.background = imagesStyle.opera.bg; 
         _ico5ds.background = imagesStyle.chrome.bg;
         _html.lit1.appendChild(document.createTextNode(l10n.br1));
         _html.lit2.appendChild(document.createTextNode(l10n.br2));
