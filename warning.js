@@ -77,27 +77,19 @@
         //left these attributes so someone can target the rest of the message with custom CSS
         _html.l.setAttribute('id','lightsOut');
         _html.d.setAttribute('id','ie6Warning');
+        _html.d.style.zIndex = 99999;
 
         _html.d.appendChild(_html.h);
         _html.d.appendChild(_html.p1);
         _html.d.appendChild(_html.p2);
         _html.d.appendChild(_html.ul);
-        _html.ul.appendChild(_html.li.ie);
-        _html.ul.appendChild(_html.li.ff);
-        _html.ul.appendChild(_html.li.safari);
-        _html.ul.appendChild(_html.li.opera);
-        _html.ul.appendChild(_html.li.chrome);
-        _html.li.ie.appendChild(_html.ico.ie);
-        _html.li.ff.appendChild(_html.ico.ff);
-        _html.li.safari.appendChild(_html.ico.safari);
-        _html.li.opera.appendChild(_html.ico.opera);
-        _html.li.chrome.appendChild(_html.ico.chrome);
-        _html.li.ie.appendChild(_html.lit.ie);
-        _html.li.ff.appendChild(_html.lit.ff);
-        _html.li.safari.appendChild(_html.lit.safari);
-        _html.li.opera.appendChild(_html.lit.opera);
-        _html.li.chrome.appendChild(_html.lit.chrome);
-        _html.d.style.zIndex = 99999;
+        for (var key1 in _html.li) {
+            if (_html.li.hasOwnProperty(key1)) {
+                _html.ul.appendChild(_html.li[key1]);
+                _html.li[key1].appendChild(_html.ico[key1]);
+                _html.li[key1].appendChild(_html.lit[key1]);
+            }
+        }
 
         var _width = document.documentElement.clientWidth,
             _height = document.documentElement.clientHeight;
