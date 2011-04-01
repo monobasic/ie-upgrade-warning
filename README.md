@@ -29,4 +29,3 @@ Look at the index.html file for example. This is a work in progress, as I'm refa
 
 * jbueza
 * renatocarvalho
-* rtgibbons
