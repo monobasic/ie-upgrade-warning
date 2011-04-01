@@ -9,35 +9,36 @@
         var l10n = configObj.localizations;
 
         var imagesStyle = {
+            bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll ',
             background: {
-                bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -185px -93px',
-                width: '120px',
-                height: '122px'
+                bgPos: '-185px -93px',
+                w: '120px',
+                h: '122px'
             },
-            ie: { 
-                bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll 8px -86px',
-                width: '100px',
-                height: '110px'
+            ie: {
+                bgPos: '8px -86px',
+                w: '100px',
+                h: '110px'
             },
-            firefox: { 
-                bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -84px -86px',
-                width: '100px',
-                height: '110px'
+            ff: {
+                bgPos: '-84px -86px',
+                w: '100px',
+                h: '110px'
             },
-            safari: { 
-                bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -84px 7px',
-                width: '100px',
-                height: '110px'
+            safari: {
+                bgPos: '-84px 7px',
+                w: '100px',
+                h: '110px'
             },
-            opera: { 
-                bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll 8px 7px',
-                width: '100px',
-                height: '110px'
+            opera: {
+                bgPos: '8px 7px',
+                w: '100px',
+                h: '110px'
             },
-            chrome: { 
-                bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll -174px 7px',
-                width: '100px',
-                height: '110px'
+            chrome: {
+                bgPos: '-174px 7px',
+                w: '100px',
+                h: '110px'
             }
         };
 
@@ -147,12 +148,12 @@
         for (var key in _html.li) {
             if (_html.li.hasOwnProperty(key)) {
                 var keyS = _html.li[key].style;
-                keyS.background = imagesStyle.background.bg;
-                keyS.width = imagesStyle.background.width;
-                keyS.height = imagesStyle.background.height;
+                keyS.background = imagesStyle.bg + imagesStyle.background.bgPos;
+                keyS.width = imagesStyle.background.w;
+                keyS.height = imagesStyle.background.h;
                 keyS.cursor = "pointer";
                 keyS.styleFloat = keyS.cssFloat = "left";
-                keyS.margin = "0 10px 10px 0"
+                keyS.margin = "0 10px 10px 0";
             }
         }
         _html.li.a.onclick = function() {window.location = l10n.url1; };
@@ -170,11 +171,11 @@
                 keyS.margin = "1px auto";
             }
         }
-        _html.ico.a.style.background = imagesStyle.ie.bg;
-        _html.ico.b.style.background = imagesStyle.firefox.bg;
-        _html.ico.c.style.background = imagesStyle.safari.bg;
-        _html.ico.d.style.background = imagesStyle.opera.bg; 
-        _html.ico.e.style.background = imagesStyle.chrome.bg;
+        _html.ico.a.style.background = imagesStyle.bg + imagesStyle.ie.bgPos;
+        _html.ico.b.style.background = imagesStyle.bg + imagesStyle.ff.bgPos;
+        _html.ico.c.style.background = imagesStyle.bg + imagesStyle.safari.bgPos;
+        _html.ico.d.style.background = imagesStyle.bg + imagesStyle.opera.bgPos; 
+        _html.ico.e.style.background = imagesStyle.bg + imagesStyle.chrome.bgPos;
         _html.lit.a.appendChild(document.createTextNode(l10n.br1));
         _html.lit.b.appendChild(document.createTextNode(l10n.br2));
         _html.lit.c.appendChild(document.createTextNode(l10n.br3));
@@ -186,7 +187,7 @@
                 var keyS = _html.lit[key].style;
                 keyS.color = "#808080";
                 keyS.fontSize = "10px";
-                keyS.width = "118px"
+                keyS.width = "118px";
                 keyS.height = "18px";
                 keyS.lineHeight = "17px";
                 keyS.margin = "1px auto";
