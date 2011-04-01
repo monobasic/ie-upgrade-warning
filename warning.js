@@ -48,21 +48,27 @@
             p1: document.createElement('p'),
             p2: document.createElement('p'),
             ul: document.createElement('ul'),
-            li1: document.createElement('li'),
-            li2: document.createElement('li'),
-            li3: document.createElement('li'),
-            li4: document.createElement('li'),
-            li5: document.createElement('li'),
-            ico1: document.createElement('div'),
-            ico2: document.createElement('div'),
-            ico3: document.createElement('div'),
-            ico4: document.createElement('div'),
-            ico5: document.createElement('div'),
-            lit1: document.createElement('div'),
-            lit2: document.createElement('div'),
-            lit3: document.createElement('div'),
-            lit4: document.createElement('div'),
-            lit5: document.createElement('div')
+            li: {
+                a: document.createElement('li'),
+                b: document.createElement('li'),
+                c: document.createElement('li'),
+                d: document.createElement('li'),
+                e: document.createElement('li')
+            },
+            ico: {
+                a: document.createElement('div'),
+                b: document.createElement('div'),
+                c: document.createElement('div'),
+                d: document.createElement('div'),
+                e: document.createElement('div')
+            },
+            lit: {
+                a: document.createElement('div'),
+                b: document.createElement('div'),
+                c: document.createElement('div'),
+                d: document.createElement('div'),
+                e: document.createElement('div')
+            }
         };
 
         document.body.appendChild(_html.l);
@@ -75,21 +81,21 @@
         _html.d.appendChild(_html.p1);
         _html.d.appendChild(_html.p2);
         _html.d.appendChild(_html.ul);
-        _html.ul.appendChild(_html.li1);
-        _html.ul.appendChild(_html.li2);
-        _html.ul.appendChild(_html.li3);
-        _html.ul.appendChild(_html.li4);
-        _html.ul.appendChild(_html.li5);
-        _html.li1.appendChild(_html.ico1);
-        _html.li2.appendChild(_html.ico2);
-        _html.li3.appendChild(_html.ico3);
-        _html.li4.appendChild(_html.ico4);
-        _html.li5.appendChild(_html.ico5);
-        _html.li1.appendChild(_html.lit1);
-        _html.li2.appendChild(_html.lit2);
-        _html.li3.appendChild(_html.lit3);
-        _html.li4.appendChild(_html.lit4);
-        _html.li5.appendChild(_html.lit5);
+        _html.ul.appendChild(_html.li.a);
+        _html.ul.appendChild(_html.li.b);
+        _html.ul.appendChild(_html.li.c);
+        _html.ul.appendChild(_html.li.d);
+        _html.ul.appendChild(_html.li.e);
+        _html.li.a.appendChild(_html.ico.a);
+        _html.li.b.appendChild(_html.ico.b);
+        _html.li.c.appendChild(_html.ico.c);
+        _html.li.d.appendChild(_html.ico.d);
+        _html.li.e.appendChild(_html.ico.e);
+        _html.li.a.appendChild(_html.lit.a);
+        _html.li.b.appendChild(_html.lit.b);
+        _html.li.c.appendChild(_html.lit.c);
+        _html.li.d.appendChild(_html.lit.d);
+        _html.li.e.appendChild(_html.lit.e);
         _html.d.style.zIndex = 99999;
 
         var _width = document.documentElement.clientWidth,
@@ -138,57 +144,55 @@
         _html.ul.style.margin = "0px auto";
         _html.ul.style.padding = "5px";
 
-        var _li1ds = _html.li1.style,
-            _li2ds = _html.li2.style,
-            _li3ds = _html.li3.style,
-            _li4ds = _html.li4.style,
-            _li5ds = _html.li5.style;
-        _li1ds.background = _li2ds.background = _li3ds.background = _li4ds.background = _li5ds.background = imagesStyle.background.bg;
-        _li1ds.width = _li2ds.width = _li3ds.width = _li4ds.width = _li5ds.width = imagesStyle.background.width;
-        _li1ds.height = _li2ds.height = _li3ds.height = _li4ds.height = _li5ds.height = imagesStyle.background.height;
-        _li1ds.cursor = _li2ds.cursor = _li3ds.cursor = _li4ds.cursor = _li5ds.cursor = "pointer";
-        _html.li1.onclick = function() {window.location = l10n.url1; };
-        _html.li2.onclick = function() {window.location = l10n.url2; };
-        _html.li3.onclick = function() {window.location = l10n.url3; };
-        _html.li4.onclick = function() {window.location = l10n.url4; };
-        _html.li5.onclick = function() {window.location = l10n.url5; };
-        _li1ds.styleFloat = _li2ds.styleFloat = _li3ds.styleFloat = _li4ds.styleFloat = _li5ds.styleFloat = "left";
-        _li1ds.cssFloat = _li2ds.cssFloat = _li3ds.cssFloat = _li4ds.cssFloat = _li5ds.cssFloat = "left";
-        _li1ds.margin = _li2ds.margin = _li3ds.margin = _li4ds.margin = _li5ds.margin = "0 10px 10px 0";
-        _li1ds.margin = _li2ds.margin = _li3ds.margin = _li4ds.margin = "0 10px 10px 0";
-        _li5ds.margin = "0 0 10px";
+        for (var key in _html.li) {
+            if (_html.li.hasOwnProperty(key)) {
+                var keyS = _html.li[key].style;
+                keyS.background = imagesStyle.background.bg;
+                keyS.width = imagesStyle.background.width;
+                keyS.height = imagesStyle.background.height;
+                keyS.cursor = "pointer";
+                keyS.styleFloat = keyS.cssFloat = "left";
+                keyS.margin = "0 10px 10px 0"
+            }
+        }
+        _html.li.a.onclick = function() {window.location = l10n.url1; };
+        _html.li.b.onclick = function() {window.location = l10n.url2; };
+        _html.li.c.onclick = function() {window.location = l10n.url3; };
+        _html.li.d.onclick = function() {window.location = l10n.url4; };
+        _html.li.e.onclick = function() {window.location = l10n.url5; };
+        _html.li.e.style.margin = "0 0 10px";
 
-        var _ico1ds = _html.ico1.style,
-            _ico2ds = _html.ico2.style,
-            _ico3ds = _html.ico3.style,
-            _ico4ds = _html.ico4.style,
-            _ico5ds = _html.ico5.style;
-        _ico1ds.width = _ico2ds.width = _ico3ds.width = _ico4ds.width = _ico5ds.width = "100px";
-        _ico1ds.height = _ico2ds.height = _ico3ds.height = _ico4ds.height = _ico5ds.height = "100px";
-        _ico1ds.margin = _ico2ds.margin = _ico3ds.margin = _ico4ds.margin = _ico5ds.margin = "1px auto";
-        _ico1ds.background = imagesStyle.ie.bg;
-        _ico2ds.background = imagesStyle.firefox.bg;
-        _ico3ds.background = imagesStyle.safari.bg;
-        _ico4ds.background = imagesStyle.opera.bg; 
-        _ico5ds.background = imagesStyle.chrome.bg;
-        _html.lit1.appendChild(document.createTextNode(l10n.br1));
-        _html.lit2.appendChild(document.createTextNode(l10n.br2));
-        _html.lit3.appendChild(document.createTextNode(l10n.br3));
-        _html.lit4.appendChild(document.createTextNode(l10n.br4));
-        _html.lit5.appendChild(document.createTextNode(l10n.br5));
+        for (var key in _html.ico) {
+            if (_html.ico.hasOwnProperty(key)) {
+                var keyS = _html.ico[key].style;
+                keyS.width = "100px";
+                keyS.height = "100px";
+                keyS.margin = "1px auto";
+            }
+        }
+        _html.ico.a.style.background = imagesStyle.ie.bg;
+        _html.ico.b.style.background = imagesStyle.firefox.bg;
+        _html.ico.c.style.background = imagesStyle.safari.bg;
+        _html.ico.d.style.background = imagesStyle.opera.bg; 
+        _html.ico.e.style.background = imagesStyle.chrome.bg;
+        _html.lit.a.appendChild(document.createTextNode(l10n.br1));
+        _html.lit.b.appendChild(document.createTextNode(l10n.br2));
+        _html.lit.c.appendChild(document.createTextNode(l10n.br3));
+        _html.lit.d.appendChild(document.createTextNode(l10n.br4));
+        _html.lit.e.appendChild(document.createTextNode(l10n.br5));
 
-        var _lit1ds = _html.lit1.style,
-            _lit2ds = _html.lit2.style,
-            _lit3ds = _html.lit3.style,
-            _lit4ds = _html.lit4.style,
-            _lit5ds = _html.lit5.style;
-        _lit1ds.color = _lit2ds.color = _lit3ds.color = _lit4ds.color = _lit5ds.color = "#808080";
-        _lit1ds.fontSize = _lit2ds.fontSize = _lit3ds.fontSize = _lit4ds.fontSize = _lit5ds.fontSize = "0.8em";
-        _lit1ds.height = _lit2ds.height = _lit3ds.height = _lit4ds.height = _lit5ds.height = "18px";
-        _lit1ds.lineHeight = _lit2ds.lineHeight = _lit3ds.lineHeight = _lit4ds.lineHeight = _lit5ds.lineHeight = "17px";
-        _lit1ds.margin = _lit2ds.margin = _lit3ds.margin = _lit4ds.margin = _lit5ds.margin = "1px auto";
-        _lit1ds.width = _lit2ds.width = _lit3ds.width = _lit4ds.width = _lit5ds.width = "118px";
-        _lit1ds.textAlign = _lit2ds.textAlign = _lit3ds.textAlign = _lit4ds.textAlign = _lit5ds.textAlign = "center";
+        for (var key in _html.lit) {
+            if (_html.lit.hasOwnProperty(key)) {
+                var keyS = _html.lit[key].style;
+                keyS.color = "#808080";
+                keyS.fontSize = "10px";
+                keyS.width = "118px"
+                keyS.height = "18px";
+                keyS.lineHeight = "17px";
+                keyS.margin = "1px auto";
+                keyS.textAlign = "center";
+            }
+        }
     };
 
     //safely set it into global namespace.
