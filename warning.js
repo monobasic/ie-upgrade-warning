@@ -50,25 +50,25 @@
             p2: document.createElement('p'),
             ul: document.createElement('ul'),
             li: {
-                a: document.createElement('li'),
-                b: document.createElement('li'),
-                c: document.createElement('li'),
-                d: document.createElement('li'),
-                e: document.createElement('li')
+                ie: document.createElement('li'),
+                ff: document.createElement('li'),
+                safari: document.createElement('li'),
+                opera: document.createElement('li'),
+                chrome: document.createElement('li')
             },
             ico: {
-                a: document.createElement('div'),
-                b: document.createElement('div'),
-                c: document.createElement('div'),
-                d: document.createElement('div'),
-                e: document.createElement('div')
+                ie: document.createElement('div'),
+                ff: document.createElement('div'),
+                safari: document.createElement('div'),
+                opera: document.createElement('div'),
+                chrome: document.createElement('div')
             },
             lit: {
-                a: document.createElement('div'),
-                b: document.createElement('div'),
-                c: document.createElement('div'),
-                d: document.createElement('div'),
-                e: document.createElement('div')
+                ie: document.createElement('div'),
+                ff: document.createElement('div'),
+                safari: document.createElement('div'),
+                opera: document.createElement('div'),
+                chrome: document.createElement('div')
             }
         };
 
@@ -82,21 +82,21 @@
         _html.d.appendChild(_html.p1);
         _html.d.appendChild(_html.p2);
         _html.d.appendChild(_html.ul);
-        _html.ul.appendChild(_html.li.a);
-        _html.ul.appendChild(_html.li.b);
-        _html.ul.appendChild(_html.li.c);
-        _html.ul.appendChild(_html.li.d);
-        _html.ul.appendChild(_html.li.e);
-        _html.li.a.appendChild(_html.ico.a);
-        _html.li.b.appendChild(_html.ico.b);
-        _html.li.c.appendChild(_html.ico.c);
-        _html.li.d.appendChild(_html.ico.d);
-        _html.li.e.appendChild(_html.ico.e);
-        _html.li.a.appendChild(_html.lit.a);
-        _html.li.b.appendChild(_html.lit.b);
-        _html.li.c.appendChild(_html.lit.c);
-        _html.li.d.appendChild(_html.lit.d);
-        _html.li.e.appendChild(_html.lit.e);
+        _html.ul.appendChild(_html.li.ie);
+        _html.ul.appendChild(_html.li.ff);
+        _html.ul.appendChild(_html.li.safari);
+        _html.ul.appendChild(_html.li.opera);
+        _html.ul.appendChild(_html.li.chrome);
+        _html.li.ie.appendChild(_html.ico.ie);
+        _html.li.ff.appendChild(_html.ico.ff);
+        _html.li.safari.appendChild(_html.ico.safari);
+        _html.li.opera.appendChild(_html.ico.opera);
+        _html.li.chrome.appendChild(_html.ico.chrome);
+        _html.li.ie.appendChild(_html.lit.ie);
+        _html.li.ff.appendChild(_html.lit.ff);
+        _html.li.safari.appendChild(_html.lit.safari);
+        _html.li.opera.appendChild(_html.lit.opera);
+        _html.li.chrome.appendChild(_html.lit.chrome);
         _html.d.style.zIndex = 99999;
 
         var _width = document.documentElement.clientWidth,
@@ -146,45 +146,29 @@
         _html.ul.style.padding = "5px";
 
         for (var key in _html.li) {
+            var keyS;
             if (_html.li.hasOwnProperty(key)) {
-                var keyS = _html.li[key].style;
+                keyS = _html.li[key].style;
                 keyS.background = imagesStyle.bg + imagesStyle.background.bgPos;
                 keyS.width = imagesStyle.background.w;
                 keyS.height = imagesStyle.background.h;
                 keyS.cursor = "pointer";
                 keyS.styleFloat = keyS.cssFloat = "left";
                 keyS.margin = "0 10px 10px 0";
+                //wrapping with a closure to emulate a real local var
+                _html.li[key].onclick = (function(){ var akey = key; return function() { window.location = l10n.url[akey] } } )();
             }
-        }
-        _html.li.a.onclick = function() {window.location = l10n.url1; };
-        _html.li.b.onclick = function() {window.location = l10n.url2; };
-        _html.li.c.onclick = function() {window.location = l10n.url3; };
-        _html.li.d.onclick = function() {window.location = l10n.url4; };
-        _html.li.e.onclick = function() {window.location = l10n.url5; };
-        _html.li.e.style.margin = "0 0 10px";
 
-        for (var key in _html.ico) {
             if (_html.ico.hasOwnProperty(key)) {
-                var keyS = _html.ico[key].style;
+                keyS = _html.ico[key].style;
                 keyS.width = "100px";
                 keyS.height = "100px";
                 keyS.margin = "1px auto";
+                keyS.background = imagesStyle.bg + imagesStyle[key].bgPos;
             }
-        }
-        _html.ico.a.style.background = imagesStyle.bg + imagesStyle.ie.bgPos;
-        _html.ico.b.style.background = imagesStyle.bg + imagesStyle.ff.bgPos;
-        _html.ico.c.style.background = imagesStyle.bg + imagesStyle.safari.bgPos;
-        _html.ico.d.style.background = imagesStyle.bg + imagesStyle.opera.bgPos; 
-        _html.ico.e.style.background = imagesStyle.bg + imagesStyle.chrome.bgPos;
-        _html.lit.a.appendChild(document.createTextNode(l10n.br1));
-        _html.lit.b.appendChild(document.createTextNode(l10n.br2));
-        _html.lit.c.appendChild(document.createTextNode(l10n.br3));
-        _html.lit.d.appendChild(document.createTextNode(l10n.br4));
-        _html.lit.e.appendChild(document.createTextNode(l10n.br5));
 
-        for (var key in _html.lit) {
             if (_html.lit.hasOwnProperty(key)) {
-                var keyS = _html.lit[key].style;
+                keyS = _html.lit[key].style;
                 keyS.color = "#808080";
                 keyS.fontSize = "10px";
                 keyS.width = "118px";
@@ -192,8 +176,11 @@
                 keyS.lineHeight = "17px";
                 keyS.margin = "1px auto";
                 keyS.textAlign = "center";
+                _html.lit[key].appendChild(document.createTextNode(l10n.br[key]));
             }
         }
+        //removing left margin on last element
+        _html.li.chrome.style.margin = "0 0 10px";
     };
 
     //safely set it into global namespace.
