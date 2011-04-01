@@ -135,9 +135,8 @@
         _html.ul.style.listStyleImage = "none";
         _html.ul.style.listStylePosition = "outside";
         _html.ul.style.listStyleType = "none";
-        _html.ul.style.margin = "0 px auto";
-        _html.ul.style.padding = "0px";
-        _html.ul.style.paddingLeft = "10px";
+        _html.ul.style.margin = "0px auto";
+        _html.ul.style.padding = "5px";
 
         var _li1ds = _html.li1.style;
         var _li2ds = _html.li2.style;
@@ -154,7 +153,10 @@
         _html.li4.onclick = function() {window.location = l10n.url4; };
         _html.li5.onclick = function() {window.location = l10n.url5; };
         _li1ds.styleFloat = _li2ds.styleFloat = _li3ds.styleFloat = _li4ds.styleFloat = _li5ds.styleFloat = "left";
+        _li1ds.cssFloat = _li2ds.cssFloat = _li3ds.cssFloat = _li4ds.cssFloat = _li5ds.cssFloat = "left";
         _li1ds.margin = _li2ds.margin = _li3ds.margin = _li4ds.margin = _li5ds.margin = "0 10px 10px 0";
+        _li1ds.margin = _li2ds.margin = _li3ds.margin = _li4ds.margin = "0 10px 10px 0";
+        _li5ds.margin = "0 0 10px";
 
         var _ico1ds = _html.ico1.style;
         var _ico2ds = _html.ico2.style;
