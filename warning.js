@@ -1,14 +1,11 @@
 (function(window, undefined) {
 
     var fn = function(cb) {
-        var configObj = {};
-        if(typeof(cb) == 'function') {
-            configObj = cb();
-        }
+        var configObj = (typeof(cb) == 'function') ? cb() : {},
 
-        var l10n = configObj.localizations;
+        l10n = configObj.localizations,
 
-        var imagesStyle = {
+        imagesStyle = {
             bg: 'transparent url('+configObj.imgPath+'/images.jpg) no-repeat scroll ',
             background: {
                 bgPos: '-185px -93px',
@@ -40,9 +37,9 @@
                 w: '100px',
                 h: '110px'
             }
-        };
+        },
 
-        var _html = {
+        _html = {
             d: document.createElement('div'),
             l: document.createElement('div'),
             h: document.createElement('h1'),
