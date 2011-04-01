@@ -6,7 +6,7 @@
             configObj = cb();
         }
 
-        var l10n = configObj['localizations'];
+        var l10n = configObj.localizations.;
 
         var imagesStyle = {
             background: {
