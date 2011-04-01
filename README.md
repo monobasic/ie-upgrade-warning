@@ -6,10 +6,9 @@ The ie-upgrade-warning is a little script (8kb) that displays a warning message 
 
 The webpage is still visible behind a transparent background, but access to it is prevented. The idea is to force users to upgrade from IE and avoid the website from a bad reputation that website is not rendering correctly in IE6.
 
-Provides a much more sane way of localization.
+This is based off http://code.google.com/p/ie6-upgrade-warning/. Thanks to him for a great script, [jbueza](https://github.com/jbueza/IE6-Warning-with-Localizations) has taken it further so that people can localize the messaging into different languages.
 
-NOTE: This is based off http://code.google.com/p/ie6-upgrade-warning/. Thanks to him for a great script, [jbueza](https://github.com/jbueza/IE6-Warning-with-Localizations) has taken it further so that people can localize the messaging into different languages.
-
+I wanted something smaller. With the original one on Google Code, it was weighing in at over 29KB with images. As of 2011-04-01 mine is under 19KB, almost 15KB with minified javascript. Also, I've reduce the HTTP Request from the original 7 to just 3. One of the localization, one for the javascript and one for the image sprite. I'm also updating the presentation to be compatible IE 7. Not woried about the other 4 browsers since their user base seems to stay up to date.
 
 ## Usage 
 
