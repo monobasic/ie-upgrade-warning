@@ -12,13 +12,18 @@
                 w: '120px',
                 h: '122px'
             },
-            ie: {
-                bgPos: '8px -86px',
+            ff: {
+                bgPos: '-84px -86px',
                 w: '100px',
                 h: '110px'
             },
-            ff: {
-                bgPos: '-84px -86px',
+            chrome: {
+                bgPos: '-174px 7px',
+                w: '100px',
+                h: '110px'
+            },
+            ie: {
+                bgPos: '8px -86px',
                 w: '100px',
                 h: '110px'
             },
@@ -29,11 +34,6 @@
             },
             opera: {
                 bgPos: '8px 7px',
-                w: '100px',
-                h: '110px'
-            },
-            chrome: {
-                bgPos: '-174px 7px',
                 w: '100px',
                 h: '110px'
             }
@@ -47,25 +47,25 @@
             p2: document.createElement('p'),
             ul: document.createElement('ul'),
             li: {
-                ie: document.createElement('li'),
                 ff: document.createElement('li'),
+                chrome: document.createElement('li'),
+                ie: document.createElement('li'),
                 safari: document.createElement('li'),
-                opera: document.createElement('li'),
-                chrome: document.createElement('li')
+                opera: document.createElement('li')
             },
             ico: {
-                ie: document.createElement('div'),
                 ff: document.createElement('div'),
+                chrome: document.createElement('div'),
+                ie: document.createElement('div'),
                 safari: document.createElement('div'),
-                opera: document.createElement('div'),
-                chrome: document.createElement('div')
+                opera: document.createElement('div')
             },
             lit: {
-                ie: document.createElement('div'),
                 ff: document.createElement('div'),
+                chrome: document.createElement('div'),
+                ie: document.createElement('div'),
                 safari: document.createElement('div'),
-                opera: document.createElement('div'),
-                chrome: document.createElement('div')
+                opera: document.createElement('div')
             }
         },
         _width = document.documentElement.clientWidth,
