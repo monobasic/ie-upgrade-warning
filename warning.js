@@ -22,13 +22,13 @@
                 w: '100px',
                 h: '110px'
             },
-            ie: {
-                bgPos: '8px -86px',
+            safari: {
+                bgPos: '-84px 7px',
                 w: '100px',
                 h: '110px'
             },
-            safari: {
-                bgPos: '-84px 7px',
+            ie: {
+                bgPos: '8px -86px',
                 w: '100px',
                 h: '110px'
             },
