@@ -12,18 +12,18 @@
 <body>
 
 </body>
-<!--[if lte IE 6]>
+<!--[if lte IE 7]>
   <script src="localization/en_US.js"></script>
   <script src="warning.js"></script>
   <script>
     window.onload=function(){
-      ie6Warning(function() {
+      ieWarning(function() {
         var languageMap = {};
           //specifies a JSON hash table for localization
         if(window.IE6WarningLocalizations) {
           languageMap = window.IE6WarningLocalizations;
         }
-        
+
         return {
           imgPath: "./i/", //specifies the path to the icons of each browser
           localizations:  languageMap
