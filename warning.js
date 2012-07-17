@@ -102,11 +102,11 @@
             _html.l.style.background = "#fff";
         })();
 
-        //setup ie6warning box
+        //setup iewarning box
         (function() {
             var _ddw = 650,
                 _ddh = 260;
-            _html.d.setAttribute('id','ie6Warning');
+            _html.d.setAttribute('id','ieWarning');
             _html.d.style.zIndex = 99999;
             _html.d.style.width = _ddw+"px";
             _html.d.style.height = _ddh+"px";
@@ -185,5 +185,5 @@
     };
 
     //set it to global namesapce
-    window.ie6Warning = ieWarning;
+    window.ieWarning = ieWarning;
 })(window);
