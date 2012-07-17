@@ -1,5 +1,5 @@
 //render this via backend
-window.IE6WarningLocalizations ={
+window.IEWarningLocalizations ={
   msg1: "Você sabia que o seu Internet Explorer está desatualizado?",
   msg2: "Para obter uma melhor experiência possível usando nosso website, recomendamos que atualize seu navegador para uma versão mais nova ou outro navegador web. Veja abaixo a lista dos navegadores web mais populares.",
   msg3: "Basta clicar em um dos ícones para ser direcionado para a página de download",

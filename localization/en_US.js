@@ -1,5 +1,5 @@
 //render this via backend
-window.IE6WarningLocalizations ={
+window.IEWarningLocalizations ={
     msg1: "Did you know that your Internet Explorer is out of date?",
     msg2: "To get the best possible experience using our website we recommend that you upgrade to a newer version or other web browser. A list of the most popular web browsers can be found below.",
     msg3: "Just click on the icons to get to the download page",

@@ -1,5 +1,5 @@
 //render this via backend
-window.IE6WarningLocalizations ={
+window.IEWarningLocalizations ={
     msg1 : "Wissen Sie, dass Ihr Internet Explorer Browser nicht mehr aktuell ist?",
     msg2 : "Um unsere Webseite zu nutzen, empfehlen wir Ihnen Ihren Browser auf eine aktuellere Version zu aktualisieren oder einen anderen Webbrowser zu nutzen. Eine Liste der populärsten Browser finden Sie weiter unten.",
     msg3 : "Klicken Sie auf eines der Symbole um auf die Download-Seite zu gelangen",
